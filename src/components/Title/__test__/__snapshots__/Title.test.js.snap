@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Title component test Should render Title 1`] = `
+<h1
+  class="sc-AxjAm lahjEK"
+  data-testid="title"
+>
+  My Title
+</h1>
+`;
