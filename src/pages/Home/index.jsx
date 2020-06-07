@@ -1,11 +1,15 @@
 import React from "react";
 import Header from "../../layout/Header";
-const index = () => {
+import ProductsGallery from "../../layout/ProductsGallery";
+
+import { Main } from "./styles";
+const Home = () => {
   return (
-    <div className="main">
+    <Main>
       <Header />
-    </div>
+      <ProductsGallery />
+    </Main>
   );
 };
 
-export default index;
+export default Home;

@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
   }
   body{
   overflow-x: hidden;
+  background-color: white
   }
   body > *{
       padding: 0 8vw    }   
