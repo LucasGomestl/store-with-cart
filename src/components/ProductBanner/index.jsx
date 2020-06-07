@@ -5,7 +5,7 @@ import { StyledProductBanner, ProductImage, Info } from "./styles";
 
 const ProductBanner = ({ start, end, src }) => {
   return (
-    <StyledProductBanner start={start} end={end}>
+    <StyledProductBanner start={start} end={end} data-testid="banner">
       <ProductImage src={src} alt="Product banner" />
       <Info>
         <h2>Category</h2>
