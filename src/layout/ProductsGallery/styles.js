@@ -6,6 +6,7 @@ export const StyledProductGallery = styled.section`
   grid-template-rows: 200px 200px;
   grid-gap: 20px;
   grid-row-gap: 20px;
+  margin-bottom: 80px;
   @media (max-width: 1000px) {
     grid-template-columns: 1fr;
   }
