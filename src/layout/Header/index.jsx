@@ -1,7 +1,4 @@
 import React from "react";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { StyledHeader, IconsContainer, LocationContainer } from "./styles";
 
 import Title from "../../components/Title";
@@ -13,13 +10,13 @@ const Header = () => {
     <>
       <StyledHeader>
         <LocationContainer>
-          <Icon icon={faMapMarkerAlt} />
+          <Icon icon="map-marker-alt" />
           <span>City</span>
         </LocationContainer>
         <Title title="My Store" />
         <IconsContainer>
-          <Icon icon={faSearch} link="/" />
-          <Icon icon={faShoppingCart} link="/" />
+          <Icon icon="search" link="/" />
+          <Icon icon="shopping-cart" link="/" />
         </IconsContainer>
         <Menu />
       </StyledHeader>

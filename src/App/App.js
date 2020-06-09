@@ -1,6 +1,7 @@
 import React from "react";
 import Home from "../pages/Home";
 import GlobalStyle from "./globalStyle";
+import "../assets/iconsLibrary";
 
 function App() {
   return (

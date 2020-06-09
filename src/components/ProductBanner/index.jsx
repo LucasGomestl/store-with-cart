@@ -1,5 +1,4 @@
 import React from "react";
-import { faLongArrowAltRight } from "@fortawesome/free-solid-svg-icons";
 import Button from "../Button";
 import { StyledProductBanner, ProductImage, Info } from "./styles";
 
@@ -12,7 +11,7 @@ const ProductBanner = ({ start, end, src }) => {
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, unde.
         </p>
-        <Button label="Button" icon={faLongArrowAltRight} />
+        <Button label="Button" icon="long-arrow-alt-right" />
       </Info>
     </StyledProductBanner>
   );
