@@ -12,8 +12,10 @@ const GlobalStyle = createGlobalStyle`
   overflow-x: hidden;
   background-color: white
   }
-  body > *{
-      padding: 0 8vw    }   
+  .App > *{
+    padding-left: 8vw;
+    padding-right: 8vw;
+   }   
   img{
       max-width: 100%
   }   
