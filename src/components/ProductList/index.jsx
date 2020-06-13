@@ -2,13 +2,12 @@ import React from "react";
 import ProductCard from "../ProductCard";
 import { StyledProductList } from "./styles";
 
-const ProductList = () => {
+const ProductList = ({ list }) => {
   return (
     <StyledProductList>
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
+      {list.map((product, index) => (
+        <ProductCard key={index} product={product} />
+      ))}
     </StyledProductList>
   );
 };

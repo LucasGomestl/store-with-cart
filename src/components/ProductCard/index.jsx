@@ -7,15 +7,12 @@ import {
   Price,
 } from "./styles";
 
-const ProductCard = () => {
+const ProductCard = ({ product }) => {
   return (
     <StyledProductCard>
-      <ProductImage
-        src="https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg"
-        alt="product"
-      />
-      <Title>White Gold Plated Princess</Title>
-      <Price>$ 9.99</Price>
+      <ProductImage src={product.image} alt="product" />
+      <Title>{product.title}</Title>
+      <Price>$ {product.price}</Price>
       <AddToCartButton>Add To Cart</AddToCartButton>
     </StyledProductCard>
   );

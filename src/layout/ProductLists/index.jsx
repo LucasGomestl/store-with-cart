@@ -1,20 +1,42 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector, connect } from "react-redux";
 import ProductList from "../../components/ProductList";
 import { StyledProductLists, ListContainer, Title } from "./styles";
 
+import { getLists } from "../../components/ProductList/actions";
+
 const ProductLists = () => {
+  const dispatch = useDispatch();
+
+  const lists = useSelector((state) => state.productList.products) || [];
+
+  const dispatchGetList = React.useCallback(
+    (categories) => {
+      dispatch(getLists(categories));
+    },
+    [dispatch]
+  );
+
+  useEffect(() => {
+    dispatchGetList(["women clothing", "men clothing", "electronics"]);
+  }, [dispatchGetList]);
+
   return (
-    <StyledProductLists>
-      <ListContainer>
-        <Title>Category 1</Title>
-        <ProductList />
-      </ListContainer>
-      <ListContainer>
-        <Title>Category 2</Title>
-        <ProductList />
-      </ListContainer>
-    </StyledProductLists>
+    <>
+      <StyledProductLists>
+        {lists.map((list, index) => (
+          <ListContainer key={index}>
+            <Title>{list[0].category}</Title>
+            <ProductList list={list} />
+          </ListContainer>
+        ))}
+      </StyledProductLists>
+    </>
   );
 };
 
-export default ProductLists;
+const mapStateToProps = (state) => {
+  return { products: state.productList };
+};
+
+export default connect(mapStateToProps)(React.memo(ProductLists));
