@@ -3,23 +3,22 @@ import { useDispatch, useSelector, connect } from "react-redux";
 import ProductList from "../../components/ProductList";
 import { StyledProductLists, ListContainer, Title } from "./styles";
 
-import { getLists } from "../../components/ProductList/actions";
+import { getProductListsByCategory } from "./actions";
 
 const ProductLists = () => {
   const dispatch = useDispatch();
 
-  const lists = useSelector((state) => state.productList.products) || [];
-
-  const dispatchGetList = React.useCallback(
-    (categories) => {
-      dispatch(getLists(categories));
-    },
-    [dispatch]
-  );
+  const lists = useSelector((state) => state.productList.listsByCategory) || [];
 
   useEffect(() => {
-    dispatchGetList(["women clothing", "men clothing", "electronics"]);
-  }, [dispatchGetList]);
+    dispatch(
+      getProductListsByCategory([
+        "women clothing",
+        "men clothing",
+        "electronics",
+      ])
+    );
+  }, [dispatch]);
 
   return (
     <>
@@ -36,7 +35,7 @@ const ProductLists = () => {
 };
 
 const mapStateToProps = (state) => {
-  return { products: state.productList };
+  return { listsByCategory: state.productList };
 };
 
-export default connect(mapStateToProps)(React.memo(ProductLists));
+export default connect(mapStateToProps)(ProductLists);

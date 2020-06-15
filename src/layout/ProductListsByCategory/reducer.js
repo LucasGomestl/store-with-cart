@@ -1,10 +1,10 @@
 import * as types from "./actionTypes";
-const INITIAL_STATE = { products: [] };
+const INITIAL_STATE = { listsByCategory: [] };
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case types.GET_PRODUCTS:
-      return { ...state, products: action.payload };
+    case types.GET_PRODUCT_LIST_BY_CATEGORY:
+      return { ...state, listsByCategory: action.payload };
     default:
       return { ...state };
   }
