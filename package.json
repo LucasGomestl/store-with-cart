@@ -49,10 +49,12 @@
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
+    "axios-mock-adapter": "^1.18.1",
     "commitizen": "^4.1.2",
     "cz-conventional-changelog": "3.2.0",
     "eslint-plugin-react": "^7.20.0",
-    "husky": "^4.2.5"
+    "husky": "^4.2.5",
+    "redux-mock-store": "^1.5.4"
   },
   "config": {
     "commitizen": {

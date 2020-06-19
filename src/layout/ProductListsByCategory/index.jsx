@@ -24,7 +24,7 @@ const ProductLists = () => {
     <>
       <StyledProductLists>
         {lists.map((list, index) => (
-          <ListContainer key={index}>
+          <ListContainer key={index} data-testid="listContainer">
             <Title>{list[0].category}</Title>
             <ProductList list={list} />
           </ListContainer>

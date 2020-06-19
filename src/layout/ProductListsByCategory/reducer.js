@@ -1,5 +1,7 @@
 import * as types from "./actionTypes";
-const INITIAL_STATE = { listsByCategory: [] };
+export const INITIAL_STATE = {
+  listsByCategory: [],
+};
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
