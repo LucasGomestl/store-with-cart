@@ -1,5 +1,5 @@
 import React from "react";
-import Home from "../pages/Home";
+import Routes from "../routes";
 import GlobalStyle from "./globalStyle";
 import "../assets/iconsLibrary";
 
@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <GlobalStyle />
-      <Home />
+      <Routes />
     </div>
   );
 }

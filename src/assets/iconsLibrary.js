@@ -5,6 +5,14 @@ import {
   faMapMarkerAlt,
   faShoppingCart,
   faLongArrowAltRight,
+  faShoppingBag,
 } from "@fortawesome/free-solid-svg-icons";
 
-library.add(fab, faSearch, faMapMarkerAlt, faShoppingCart, faLongArrowAltRight);
+library.add(
+  fab,
+  faSearch,
+  faMapMarkerAlt,
+  faShoppingCart,
+  faLongArrowAltRight,
+  faShoppingBag
+);

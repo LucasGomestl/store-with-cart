@@ -1,13 +1,14 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 
 const Icon = ({ icon, link }) => {
   return (
     <>
       {link ? (
-        <a href={link} data-testid="link">
+        <Link to={link} data-testid="link">
           <FontAwesomeIcon icon={icon}></FontAwesomeIcon>
-        </a>
+        </Link>
       ) : (
         <FontAwesomeIcon icon={icon}></FontAwesomeIcon>
       )}

@@ -1,5 +1,8 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
+export const MainContent = styled.main`
+  margin-top: 140px;
+`;
 const GlobalStyle = createGlobalStyle`
   *{
     margin: 0px;

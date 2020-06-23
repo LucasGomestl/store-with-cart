@@ -4,7 +4,6 @@ export const StyledFooter = styled.footer`
   display: grid;
   grid-template-columns: 300px 1fr;
   height: 230px;
-
   background-color: grey;
   padding-top: 50px;
 `;
