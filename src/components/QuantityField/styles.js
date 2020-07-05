@@ -7,14 +7,14 @@ export const QuantityContainer = styled.div`
 export const QuantityNav = styled.div``;
 
 export const Quantity = styled.input`
-  width: 45px;
+  width: 68px;
   height: 42px;
   line-height: 1.65;
   padding: 0;
   margin: 0;
-  padding-left: 20px;
+  padding-left: 18px;
   border: 1px solid #eee;
-
+  box-sizing: border-box;
   &::-webkit-inner-spin-button,
   &::-webkit-outer-spin-button {
     -webkit-appearance: none;

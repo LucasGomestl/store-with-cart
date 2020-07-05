@@ -14,15 +14,24 @@ const QuantityField = ({ product, quantity, cart }) => {
       <Quantity
         type="number"
         value={quantity}
-        min="1"
-        onChange={() => dispatch(addProductToCart(product, cart, quantity))}
+        onChange={(e) => {
+          if (e.target.value > -1 && e.target.value < 100)
+            dispatch(addProductToCart(product, cart, e.target.value));
+        }}
       />
       <QuantityNav>
-        <Button onClick={() => dispatch(addProductToCart(product, cart))}>
+        <Button
+          onClick={() => {
+            if (quantity < 99) dispatch(addProductToCart(product, cart));
+          }}
+        >
           +
         </Button>
         <Button
-          onClick={() => dispatch(removeProductFromCart(product.id, cart))}
+          onClick={() => {
+            if (quantity > -1)
+              dispatch(removeProductFromCart(product.id, cart));
+          }}
         >
           -
         </Button>
