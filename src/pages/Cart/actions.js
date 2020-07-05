@@ -12,7 +12,16 @@ export const addProductToCart = (product, cart, quantity = 1) => {
       ...updatedCart[updatedItemIndex],
     };
 
-    updatedItem.quantity += quantity;
+    if (quantity === 1) {
+      updatedItem.quantity++;
+    } else {
+      if (quantity !== "") {
+        const parsedQuantity = Number.parseInt(quantity);
+        updatedItem.quantity = parsedQuantity;
+      } else {
+        updatedItem.quantity = "";
+      }
+    }
     updatedCart[updatedItemIndex] = updatedItem;
   }
   return {
