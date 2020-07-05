@@ -30,7 +30,7 @@ const Header = () => {
           {cart[0] ? (
             <Link to="/cart">
               <CartItemsQuantity>
-                <div>
+                <div data-testid="cartItemsQuantity">
                   {cart.reduce((count, current) => {
                     return count + current.quantity;
                   }, 0)}
