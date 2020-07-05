@@ -1,17 +1,22 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { StyledButton } from "../Button/styles";
 
 export const StyledProductCard = styled.article`
+  width: 100%;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 1px;
+  transition: all 0.5s;
+  &:hover {
+    border: 1px solid lightgrey;
+  }
+`;
+
+export const StyledLink = styled(Link)`
   display: grid;
   grid-template-columns: 1fr;
-  width: 100%;
-  height: 350px;
   justify-items: center;
-  transition: all 0.2s;
-  cursor: pointer;
-  &:hover {
-    transform: scale(1.03);
-  }
 `;
 
 export const ProductImage = styled.img`

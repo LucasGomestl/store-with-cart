@@ -6,6 +6,7 @@ import {
   AddToCartButton,
   Title,
   Price,
+  StyledLink,
 } from "./styles";
 
 import { addProductToCart } from "../../pages/Cart/actions";
@@ -15,9 +16,11 @@ const ProductCard = ({ product }) => {
   const cart = useSelector((state) => state.cart.cart) || [];
   return (
     <StyledProductCard>
-      <ProductImage src={product.image} alt="product" />
-      <Title>{product.title}</Title>
-      <Price>$ {product.price}</Price>
+      <StyledLink to={"/product/" + product.id}>
+        <ProductImage src={product.image} alt="product" />
+        <Title>{product.title}</Title>
+        <Price>$ {product.price}</Price>
+      </StyledLink>
       <AddToCartButton
         onClick={() => dispatch(addProductToCart(product, cart))}
       >

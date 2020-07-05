@@ -2,9 +2,9 @@ import React from "react";
 import { StyledButton } from "./styles";
 import Icon from "../Icon";
 
-const Button = ({ label, icon }) => {
+const Button = ({ label, icon, width, color, onClick }) => {
   return (
-    <StyledButton>
+    <StyledButton width={width} color={color} onClick={onClick}>
       {label} <Icon icon={icon} />
     </StyledButton>
   );
