@@ -25,7 +25,7 @@ const CartItem = () => {
   const dispatch = useDispatch();
 
   return cart.map((product) => (
-    <StyledItem>
+    <StyledItem key={product.id} data-testid="cartItem">
       <ProductInfo>
         <ProductImage src={product.image} alt="Product" />
         <div>

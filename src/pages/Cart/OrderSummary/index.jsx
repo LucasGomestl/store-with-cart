@@ -23,7 +23,8 @@ const OrderSummary = () => {
       <Title>Order Summary</Title>
       <TotalPriceContainer>
         <div>
-          Total <span>{formatter.format(totalPrice)}</span>
+          Total{" "}
+          <span data-testid="totalPrice">{formatter.format(totalPrice)}</span>
         </div>
         <CheckoutButton>
           <Icon icon="shopping-bag" /> Checkout
