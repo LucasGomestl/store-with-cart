@@ -25,14 +25,18 @@ describe("ProdctListsByCategory Actions", () => {
         .onGet(
           "https://fakestoreapi.com/products/category/" + category + "?limit=4"
         )
-        .reply(200, [])
+        .reply(200, [{ category }])
     );
 
     store.dispatch(actions.getProductListsByCategory(categories)).then(() => {
       const expectedAction = [
         {
           type: types.GET_PRODUCT_LIST_BY_CATEGORY,
-          payload: [[], [], []],
+          payload: [
+            [{ category: "women clothing" }],
+            [{ category: "men clothing" }],
+            [{ category: "electronics" }],
+          ],
         },
       ];
       expect(store.getActions()).toEqual(expectedAction);
