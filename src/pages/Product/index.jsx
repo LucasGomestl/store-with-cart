@@ -41,8 +41,8 @@ const Product = () => {
   }, [dispatch, product.category]);
 
   useEffect(() => {
-    getRecommendedList();
     getProduct(id);
+    getRecommendedList();
   }, [id, getRecommendedList]);
 
   const formatter = new Intl.NumberFormat("en-US", {
@@ -56,7 +56,7 @@ const Product = () => {
         <StyledProduct>
           <ProductImage src={product.image} />
           <ProductInfo>
-            <Title>{product.title}</Title>
+            <Title data-testid="productTitle">{product.title}</Title>
             <Price>{formatter.format(product.price)}</Price>
             <ButtonsContainer>
               <Button label="Buy now" icon="shopping-bag" width="120px" />
