@@ -38,7 +38,7 @@ export const Description = styled.span`
 `;
 export const ProductInfo = styled.div`
   width: 100%;
-  height: 600px;
+  height: max-content;
   padding-top: 20px;
 `;
 

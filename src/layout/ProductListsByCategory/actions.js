@@ -5,9 +5,7 @@ import axios from "axios";
 export async function getProductListsByCategory(categories) {
   const request = categories.map(async (category) => {
     return await axios
-      .get(
-        "https://fakestoreapi.com/products/category/" + category + "?limit=4"
-      )
+      .get("https://fakestoreapi.com/products/category/" + category + "")
       .then((res, err) => res.data);
   });
 

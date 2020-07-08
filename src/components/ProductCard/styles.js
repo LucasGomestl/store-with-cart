@@ -3,11 +3,12 @@ import { Link } from "react-router-dom";
 import { StyledButton } from "../Button/styles";
 
 export const StyledProductCard = styled.article`
-  width: 100%;
+  max-width: 100%;
   border: 1px solid white;
   border-radius: 5px;
   padding: 1px;
   transition: all 0.5s;
+  margin: 0 10px;
   &:hover {
     border: 1px solid lightgrey;
   }
