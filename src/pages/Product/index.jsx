@@ -7,6 +7,9 @@ import Header from "../../layout/Header";
 import Footer from "../../layout/Footer";
 import Button from "../../components/Button";
 import ProductList from "../../components/ProductList";
+import Loading from "../../components/Loading";
+
+import { formatter } from "../../utils";
 
 import { addProductToCart } from "../Cart/actions";
 import { getProductListsByCategory } from "../../layout/ProductListsByCategory/actions";
@@ -24,6 +27,7 @@ import {
 
 const Product = () => {
   const [product, setProduct] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
   const dispatch = useDispatch();
 
   const cart = useSelector((state) => state.cart.cart) || [];
@@ -45,35 +49,40 @@ const Product = () => {
     getRecommendedList();
   }, [id, getRecommendedList]);
 
-  const formatter = new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-  });
+  setTimeout(function () {
+    setIsLoading(false);
+  }, 1300);
   return (
     <>
       <Header />
       <Main>
-        <StyledProduct>
-          <ProductImage src={product.image} />
-          <ProductInfo>
-            <Title data-testid="productTitle">{product.title}</Title>
-            <Price>{formatter.format(product.price)}</Price>
-            <ButtonsContainer>
-              <Button label="Buy now" icon="shopping-bag" width="120px" />
-              <Button
-                label="Add To Cart"
-                icon="shopping-cart"
-                width="150px"
-                onClick={() => dispatch(addProductToCart(product, cart))}
-              />
-            </ButtonsContainer>
-            <Description>{product.description}</Description>
-          </ProductInfo>
-        </StyledProduct>
-        <Title>Recommended</Title>
-        {lists.map((list, index) => (
-          <ProductList list={list} key={index} filter={product.id} />
-        ))}
+        {isLoading ? (
+          <Loading />
+        ) : (
+          <>
+            <StyledProduct>
+              <ProductImage src={product.image} />
+              <ProductInfo>
+                <Title data-testid="productTitle">{product.title}</Title>
+                <Price>{formatter.format(product.price)}</Price>
+                <ButtonsContainer>
+                  <Button label="Buy now" icon="shopping-bag" width="120px" />
+                  <Button
+                    label="Add To Cart"
+                    icon="shopping-cart"
+                    width="150px"
+                    onClick={() => dispatch(addProductToCart(product, cart))}
+                  />
+                </ButtonsContainer>
+                <Description>{product.description}</Description>
+              </ProductInfo>
+            </StyledProduct>
+            <Title>Recommended</Title>
+            {lists.map((list, index) => (
+              <ProductList list={list} key={index} filter={product.id} />
+            ))}
+          </>
+        )}
       </Main>
       <Footer />
     </>
