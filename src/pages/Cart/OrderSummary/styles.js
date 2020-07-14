@@ -31,4 +31,7 @@ export const CheckoutButton = styled.button`
   font-size: 20px;
   width: 100%;
   cursor: pointer;
+  &:focus {
+    outline: none;
+  }
 `;

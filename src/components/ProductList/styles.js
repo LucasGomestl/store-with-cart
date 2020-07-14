@@ -4,8 +4,8 @@ export const StyledProductList = styled.div`
   .carousel {
     align-items: flex-end;
     justify-content: center;
-    .item {
-      justify-content: center;
-    }
+  }
+  .react-multiple-carousel__arrow {
+    z-index: 1;
   }
 `;

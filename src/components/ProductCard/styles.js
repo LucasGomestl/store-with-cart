@@ -3,12 +3,18 @@ import { Link } from "react-router-dom";
 import { StyledButton } from "../Button/styles";
 
 export const StyledProductCard = styled.article`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: center;
   max-width: 100%;
+  height: 402px;
   border: 1px solid white;
-  border-radius: 5px;
   padding: 1px;
+  border-radius: 5px;
   transition: all 0.5s;
   margin: 0 10px;
+  background-color: white;
   &:hover {
     border: 1px solid lightgrey;
   }
@@ -36,15 +42,14 @@ export const Price = styled.span`
   margin-bottom: 15px;
 `;
 export const AddToCartButton = styled(StyledButton)`
-  border: 2px solid #595cff;
-  background-color: white;
+  border: 2px solid #e6be1f;
+  background-color: #e6be1f;
   justify-self: center;
   width: 100%;
-  color: #595cff;
+  color: white;
   transition: all 0.3s;
   &:hover {
-    background-color: #595cff;
-    border: 2px solid white;
-    color: white;
+    background-color: #f5d555;
+    border: 2px solid #f5d555;
   }
 `;

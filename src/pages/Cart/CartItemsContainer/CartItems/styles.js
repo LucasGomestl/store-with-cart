@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
 export const StyledItem = styled.article`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: minmax(380px, 550px) 1fr;
   margin-bottom: 20px;
   position: relative;
   &::after {
@@ -14,14 +13,18 @@ export const StyledItem = styled.article`
     bottom: 0px;
     left: 2.5%;
   }
+  @media (max-width: 860px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const ProductInfo = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 550px;
+  max-width: 550px;
   height: 180px;
+  margin-right: 15px;
   > div {
     overflow: hidden;
 
@@ -54,6 +57,13 @@ export const ProductTitle = styled.h2`
 
 export const ProductDescription = styled.span`
   color: grey;
+`;
+
+export const ProductActions = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 20px;
 `;
 export const Price = styled.div`
   font-size: 15px;
