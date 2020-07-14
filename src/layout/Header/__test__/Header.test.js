@@ -10,7 +10,6 @@ describe("Header component tests", () => {
         <Header />
       </BrowserRouter>
     );
-    expect(getByTestId("menu")).toBeInTheDocument();
     expect(getByTestId("title")).toBeInTheDocument();
     expect(queryAllByTestId("cartItemsQuantity")).toEqual([]);
   });

@@ -13,7 +13,7 @@ describe("Cart actions tests", () => {
     const cart = [];
     const product = { id: 1, quantity: 0 };
     const expectedAction = {
-      type: types.ADD_PRODUCT_TO_CART,
+      type: types.UPDATE_CART,
       payload: [{ id: 1, quantity: 1 }],
     };
     expect(actions.addProductToCart(product, cart)).toEqual(expectedAction);
@@ -23,7 +23,7 @@ describe("Cart actions tests", () => {
     const product = { id: 1, quantity: 1 };
     const cart = [product];
     const expectedAction = {
-      type: types.REMOVE_PRODUCT_FROM_CART,
+      type: types.UPDATE_CART,
       payload: [],
     };
     expect(actions.removeProductFromCart(product.id, cart)).toEqual(
@@ -37,7 +37,7 @@ describe("Cart actions tests", () => {
     const quantity = 3;
 
     const expectedAction = {
-      type: types.ADD_PRODUCT_TO_CART,
+      type: types.UPDATE_CART,
       payload: [{ id: 1, quantity: 3 }],
     };
 
@@ -61,16 +61,25 @@ describe("Cart component tests", () => {
 
 describe("CartItemsContainer component tests", () => {
   it("Should render CartItems with default initial state", () => {
-    const { queryAllByTestId } = render(<CartItems />);
+    const { queryAllByTestId } = render(
+      <BrowserRouter>
+        <CartItems />
+      </BrowserRouter>
+    );
     expect(queryAllByTestId("cartItem")).toHaveLength(0);
   });
 
   it("Should render CartItems with custom initial state", () => {
-    const { queryAllByTestId } = render(<CartItems />, {
-      initialState: {
-        cart: { cart: [{ id: 1 }, { id: 2 }] },
-      },
-    });
+    const { queryAllByTestId } = render(
+      <BrowserRouter>
+        <CartItems />
+      </BrowserRouter>,
+      {
+        initialState: {
+          cart: { cart: [{ id: 1 }, { id: 2 }] },
+        },
+      }
+    );
     expect(queryAllByTestId("cartItem")).toHaveLength(2);
   });
 });

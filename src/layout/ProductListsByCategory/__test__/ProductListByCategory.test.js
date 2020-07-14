@@ -22,9 +22,7 @@ describe("ProdctListsByCategory Actions", () => {
     const categories = ["women clothing", "men clothing", "electronics"];
     categories.map((category) =>
       mock
-        .onGet(
-          "https://fakestoreapi.com/products/category/" + category + "?limit=4"
-        )
+        .onGet("https://fakestoreapi.com/products/category/" + category + "")
         .reply(200, [{ category }])
     );
 

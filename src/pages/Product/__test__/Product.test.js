@@ -26,7 +26,7 @@ describe("Product Tests", () => {
     });
     expect(getProduct).toBeCalledWith("https://fakestoreapi.com/products/1");
     expect(getLists).toBeCalledWith(
-      "https://fakestoreapi.com/products/category/men clothing?limit=4"
+      "https://fakestoreapi.com/products/category/men clothing"
     );
 
     getProduct.mockRestore();
