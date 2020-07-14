@@ -10,22 +10,21 @@ const ProductLists = () => {
 
   const lists = useSelector((state) => state.productList.listsByCategory) || [];
 
+  const categories = React.useMemo(
+    () => ["women clothing", "men clothing", "electronics"],
+    []
+  );
+
   useEffect(() => {
-    dispatch(
-      getProductListsByCategory([
-        "women clothing",
-        "men clothing",
-        "electronics",
-      ])
-    );
-  }, [dispatch]);
+    dispatch(getProductListsByCategory(categories));
+  }, [dispatch, categories]);
 
   return (
     <>
       <StyledProductLists>
         {lists.map((list, index) => (
           <ListContainer key={index} data-testid="listContainer">
-            <Title>{list[0].category}</Title>
+            <Title>{categories[index]}</Title>
             <ProductList list={list} />
           </ListContainer>
         ))}
