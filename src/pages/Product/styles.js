@@ -16,6 +16,7 @@ export const StyledProduct = styled.section`
   margin-bottom: 80px;
   @media (max-width: 890px) {
     grid-template-columns: 1fr;
+    margin-left: 0px;
   }
 `;
 
@@ -47,4 +48,12 @@ export const ButtonsContainer = styled.div`
   justify-content: space-around;
   margin-top: 50px;
   margin-bottom: 50px;
+  @media (max-width: 370px) {
+    flex-direction: column;
+    align-items: center;
+    height: 120px;
+    button {
+      width: 100%;
+    }
+  }
 `;

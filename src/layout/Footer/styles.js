@@ -8,7 +8,7 @@ export const StyledFooter = styled.footer`
   align-content: center;
   align-items: center;
   height: 80px;
-  width: 100%;
+  width: calc(100% - 16vw);
   align-self: flex-end;
   background-color: white;
   background-color: #040f71;
