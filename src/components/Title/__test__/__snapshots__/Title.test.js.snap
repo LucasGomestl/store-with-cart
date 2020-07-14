@@ -2,7 +2,7 @@
 
 exports[`Title component test Should render Title 1`] = `
 <h1
-  class="sc-AxjAm lahjEK"
+  class="sc-AxjAm cmSeJb"
   data-testid="title"
 >
   My Title

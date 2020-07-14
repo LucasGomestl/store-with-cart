@@ -8,13 +8,31 @@ const Socials = () => {
     <StyledSocials>
       <SocialsList>
         <li>
-          <Icon icon={["fab", "facebook-f"]} link="/" />
+          <a
+            href="https://github.com/LucasGomestl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon icon={["fab", "github"]} color="white" />
+          </a>
         </li>
         <li>
-          <Icon icon={["fab", "instagram"]} link="/" />
+          <a
+            href="https://www.facebook.com/lucasgomes.tl/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon icon={["fab", "facebook-f"]} color="white" />
+          </a>
         </li>
         <li>
-          <Icon icon={["fab", "whatsapp"]} link="/" />
+          <a
+            href="https://api.whatsapp.com/send?phone=5567992938017"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon icon={["fab", "whatsapp"]} color="white" />
+          </a>
         </li>
       </SocialsList>
     </StyledSocials>

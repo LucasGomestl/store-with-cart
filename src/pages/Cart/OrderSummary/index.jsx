@@ -8,10 +8,7 @@ import {
   CheckoutButton,
 } from "./styles";
 
-const formatter = new Intl.NumberFormat("en-US", {
-  style: "currency",
-  currency: "USD",
-});
+import { formatter } from "../../../utils";
 
 const OrderSummary = () => {
   const cart = useSelector((state) => state.cart.cart) || [];

@@ -10,6 +10,7 @@ import {
 } from "./styles";
 
 import { addProductToCart } from "../../pages/Cart/actions";
+import { formatter } from "../../utils";
 
 const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
@@ -19,7 +20,7 @@ const ProductCard = ({ product }) => {
       <StyledLink to={"/product/" + product.id}>
         <ProductImage src={product.image} alt="product" />
         <Title>{product.title}</Title>
-        <Price>$ {product.price}</Price>
+        <Price>{formatter.format(product.price)}</Price>
       </StyledLink>
       <AddToCartButton
         onClick={() => dispatch(addProductToCart(product, cart))}

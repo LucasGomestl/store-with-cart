@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector, connect } from "react-redux";
 import { deleteProductFromCart } from "../../actions";
+import { Link } from "react-router-dom";
 
 import {
   StyledItem,
@@ -11,14 +12,12 @@ import {
   RemoveFromCart,
   ProductDescription,
   MultipliedPrice,
+  ProductActions,
 } from "./styles";
 
 import Quantity from "../../../../components/QuantityField";
 
-const formatter = new Intl.NumberFormat("en-US", {
-  style: "currency",
-  currency: "USD",
-});
+import { formatter } from "../../../../utils";
 
 const CartItem = () => {
   const cart = useSelector((state) => state.cart.cart) || [];
@@ -26,25 +25,29 @@ const CartItem = () => {
 
   return cart.map((product) => (
     <StyledItem key={product.id} data-testid="cartItem">
-      <ProductInfo>
-        <ProductImage src={product.image} alt="Product" />
-        <div>
-          <ProductTitle>{product.title}</ProductTitle>
+      <Link to={"/product/" + product.id}>
+        <ProductInfo>
+          <ProductImage src={product.image} alt="Product" />
           <div>
-            <Price>{formatter.format(product.price)}</Price>
-            <ProductDescription>{product.description}</ProductDescription>
+            <ProductTitle>{product.title}</ProductTitle>
+            <div>
+              <Price>{formatter.format(product.price)}</Price>
+              <ProductDescription>{product.description}</ProductDescription>
+            </div>
           </div>
-        </div>
-      </ProductInfo>
-      <Quantity product={product} quantity={product.quantity} cart={cart} />
-      <MultipliedPrice>
-        {formatter.format(product.price * product.quantity)}
-      </MultipliedPrice>
-      <RemoveFromCart
-        onClick={() => dispatch(deleteProductFromCart(product.id, cart))}
-      >
-        X
-      </RemoveFromCart>
+        </ProductInfo>
+      </Link>
+      <ProductActions>
+        <Quantity product={product} quantity={product.quantity} cart={cart} />
+        <MultipliedPrice>
+          {formatter.format(product.price * product.quantity)}
+        </MultipliedPrice>
+        <RemoveFromCart
+          onClick={() => dispatch(deleteProductFromCart(product.id, cart))}
+        >
+          X
+        </RemoveFromCart>
+      </ProductActions>
     </StyledItem>
   ));
 };

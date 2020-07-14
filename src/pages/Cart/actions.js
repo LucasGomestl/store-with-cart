@@ -25,7 +25,7 @@ export const addProductToCart = (product, cart, quantity = 1) => {
     updatedCart[updatedItemIndex] = updatedItem;
   }
   return {
-    type: types.ADD_PRODUCT_TO_CART,
+    type: types.UPDATE_CART,
     payload: updatedCart,
   };
 };
@@ -43,7 +43,7 @@ export const removeProductFromCart = (id, cart) => {
     updatedCart.splice(updatedItemIndex, 1);
   }
   return {
-    type: types.REMOVE_PRODUCT_FROM_CART,
+    type: types.UPDATE_CART,
     payload: updatedCart,
   };
 };
@@ -55,7 +55,7 @@ export const deleteProductFromCart = (id, cart) => {
   updatedCart.splice(updatedItemIndex, 1);
 
   return {
-    type: types.DELETE_PRODUCT_FROM_CART,
+    type: types.UPDATE_CART,
     payload: updatedCart,
   };
 };

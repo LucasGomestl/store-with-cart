@@ -4,7 +4,6 @@ import Footer from "../../layout/Footer";
 
 import CartItemsContainer from "./CartItemsContainer";
 import OrderSummary from "./OrderSummary";
-
 import { Main } from "./styles";
 
 const Cart = () => {

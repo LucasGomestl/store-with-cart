@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "../../layout/Header";
-import ProductsGallery from "../../layout/ProductsGallery";
 import ProductListsByCategory from "../../layout/ProductListsByCategory";
 import Footer from "../../layout/Footer";
 
@@ -10,7 +9,6 @@ const Home = () => {
     <>
       <Header />
       <Main>
-        <ProductsGallery />
         <ProductListsByCategory />
       </Main>
       <Footer />
